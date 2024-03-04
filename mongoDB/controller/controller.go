@@ -15,7 +15,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-const connnectionString = "mongodb+srv://chandanpradhanbxr:Chandanp@cluster0.xbvad91.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&ipv6=false" //mongo db connection url
+const connnectionString = "mongodb+srv://chandanpradhanbxr:I0rBik4Fb86FHjOM@cluster0.xbvad91.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&ipv6=false" //mongo db connection url
 const dbName = "entflix"
 const colName = "watchlist"
 
@@ -133,6 +133,7 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 
 	var movie models.Netflix
 	_ = json.NewDecoder(r.Body).Decode(&movie)
+	fmt.Printf("body of request is %v",r.Body)
 	insertOneMovie(movie)
 	json.NewEncoder(w).Encode(movie)
 }

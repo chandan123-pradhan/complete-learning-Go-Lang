@@ -13,7 +13,7 @@ func main() {
 	r := routers.Routers()
 	fmt.Println("Server is getting started ...")
 
-	log.Fatal(http.ListenAndServe(":5000", r))
+	log.Fatal(http.ListenAndServe(":4000", r))
 
 	fmt.Println("listening port is 4000")
 
